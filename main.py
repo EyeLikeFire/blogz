@@ -232,8 +232,9 @@ def new_post():
         new_post = Blog(title,content,author)
         db.session.add(new_post)
         db.session.commit()
+         
 
-        return redirect('/home')
+        return redirect('/home?id='+str(new_post.id))
 
     return render_template('new-post.html')
 
@@ -243,8 +244,14 @@ def BlogIndex():
     blog_user = User.query.filter_by(email=session['email']).first()
     #print("Kabooogulaaaa" + str(blog_user))
     blogs = Blog.query.filter_by(deleted=False).all()
-    print(blogs)
+    blog_id = request.args.get('id')
+    print("////////////////////////////////////////////////////////")
+    print(blog_id)
 
+
+    if request.method == "GET" and blog_id:
+        blogs = Blog.query.filter_by(id=blog_id).first()
+        return render_template('post.html', blogs=blogs)
     return render_template('home.html', blogs=blogs)
 
 

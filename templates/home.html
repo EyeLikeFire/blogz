@@ -9,7 +9,10 @@
 <br>
 
 {% for blog in blogs %}
-<span><b>{{blog.title}}</b></span><br>
+<a href="/home?id={{blog.id}}">
+<span><b>{{blog.title}}</b></span>
+</a>
+<br>
 <span>{{blog.post}}</span>
 <br>
 <br>
