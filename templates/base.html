@@ -1,0 +1,36 @@
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+
+    <style>
+        .nocombo {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <a href='/logout'>Logout</a>
+        <br>
+        <a href="/new-post">New Post</a>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=True)%}
+
+        <ul>
+        {% for style,message in messages %}
+
+        <li class="{{style}}">{{message}}</li>
+        {% endfor %}
+        </ul>
+
+    {% endwith %}
+
+    {% block content %}
+    {% endblock %}
+
+
+</body>
+</html>
