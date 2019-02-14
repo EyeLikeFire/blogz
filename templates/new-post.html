@@ -21,7 +21,9 @@
             </td>
 
             <td>
-                <input name="body" type="textbox" value="{{body}}"/>
+            <textarea rows="8" cols="50" name="body">
+                            {{body}}</textarea>
+               <!-- <input name="body" type="textbox" value="{{body}}"/>-->
             </td>
 
             <td style="color:darkslategrey">{{error_2}}</td>
@@ -29,7 +31,7 @@
 
     </table>
 
-
-    <input type="submit" value="Create Post">
+    <br><br>
+    <input class="btn" type="submit" value="Create Post">
 </form>
 {% endblock %}

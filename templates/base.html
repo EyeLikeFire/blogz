@@ -1,22 +1,66 @@
 <!doctype <!DOCTYPE html>
 <html>
 <head>
-    <title>{{title}}</title>
-
+    <title>Build a blog</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Staatliches" rel="stylesheet">
     <style>
         .nocombo {
             color:red;
         }
+        .btn {
+            background-color: rgb(59, 59, 59);
+            border-style: none;
+            color: white;
+            font-weight: bold;
+            padding: 7px;
+            border-radius: 3px;
+        }
+        .inline {
+            font-size: 1em;
+           display: inline;
+           margin: 10px;
+           text-decoration: none;
+           font-weight: bold;
+           color:lightseagreen;
+
+        } 
+        .inline:hover {
+            color:rgb(46, 131, 127); 
+        }
+
+        .large {
+            font-size: 2em;
+        }
+        .medium {
+            font-size: 1.5em;
+        }
+        /*
+         https://css-tricks.com/snippets/css/scale-on-hover-with-webkit-transition/ 
+        */
+        .grow { transition: all .2s ease-in-out; }
+        .grow:hover { margin-left: 10px; }
+        a {
+            font-size: 1.5em;
+           text-decoration: none;
+           font-weight: bold;
+           color:rgb(83, 28, 54);
+        }
+        a:hover {
+            color:rgb(199, 27, 107);
+        }
+        body {font-family: 'Open Sans Condensed', sans-serif;}
+        h1 {font-family: 'Staatliches', cursive;}
+        
     </style>
 </head>
 <body>
 
     <div>
-        <a href="/home">Home</a>
-        <br><br>
-        <a href='/logout'>Logout</a>
-        <br><br>
-        <a href="/new-post">New Post</a>
+        <a class="inline" href="/home">Home</a>
+
+        <a class="inline" href='/logout'>Logout</a>
+
+        <a class="inline" href="/new-post">New Post</a>
     </div>
 
     {% with messages = get_flashed_messages(with_categories=True)%}
@@ -29,7 +73,7 @@
         </ul>
 
     {% endwith %}
-
+    <hr>   
     {% block content %}
     {% endblock %}
 

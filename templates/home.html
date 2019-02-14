@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Blog blog</h1>
+    <h1>Build a <s>Bear</s> Blog</h1>
 
 
     
@@ -9,12 +9,14 @@
 <br>
 
 {% for blog in blogs %}
+<div class="grow">
 <a href="/home?id={{blog.id}}">
 <span><b>{{blog.title}}</b></span>
 </a>
 <br>
 <span>{{blog.post}}</span>
 <br>
+</div>
 <br>
 {% endfor %}
     
