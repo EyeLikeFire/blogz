@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for user in users %}
+<div class="grow">
+<a href="/blog?user_id={{user.id}}">
+<span>{{user.name}}</span>
+</a>
+<br>
+</div>
+<br>
+{% endfor %}
+
+{% endblock %}

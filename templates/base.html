@@ -28,12 +28,33 @@
             color:rgb(46, 131, 127); 
         }
 
+        .gray {
+           font-size: 1em;
+           display: inline;
+           margin: 10px;
+           text-decoration: none;
+           font-weight: bold;
+           color: gray;
+        }
+
+        .gray:hover {
+            color: rgb(66, 66, 66);
+        }
+
+        .small-a {
+           font-size: 1em; 
+           text-decoration: none;
+           font-weight: bold;
+           color:rgb(28, 54, 83);
+        }
+        .small-a:hover { color:rgb(77, 112, 151); }
         .large {
             font-size: 2em;
         }
         .medium {
             font-size: 1.5em;
         }
+        .small { font-size: .8em}
         /*
          https://css-tricks.com/snippets/css/scale-on-hover-with-webkit-transition/ 
         */
@@ -48,6 +69,10 @@
         a:hover {
             color:rgb(199, 27, 107);
         }
+
+        div {
+            padding-right: 20%;
+        }
         body {font-family: 'Open Sans Condensed', sans-serif;}
         h1 {font-family: 'Staatliches', cursive;}
         
@@ -56,11 +81,18 @@
 <body>
 
     <div>
-        <a class="inline" href="/home">Home</a>
+        <a class="inline" href="/">Home</a>
 
-        <a class="inline" href='/logout'>Logout</a>
+        <a class="inline" href="/blog">Blogs</a>
 
         <a class="inline" href="/new-post">New Post</a>
+
+        <a class="gray" href='/login'>Login</a>
+
+        <a class="gray" href='/logout'>Logout</a>
+
+        <br>
+
     </div>
 
     {% with messages = get_flashed_messages(with_categories=True)%}

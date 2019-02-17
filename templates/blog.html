@@ -5,19 +5,26 @@
 
 
     
-<br>
+
 <br>
 
 {% for blog in blogs %}
 <div class="grow">
-<a href="/home?id={{blog.id}}">
+<a href="/blog?id={{blog.id}}">
 <span><b>{{blog.title}}</b></span>
 </a>
 <br>
 <span>{{blog.post}}</span>
 <br>
+{% for user in users %}
+{% if user.id == blog.owner_id %}
+
+<span><i class="small"> Written by: <a class="small-a" href="/blog?user_id={{user.id}}">{{user.name}}</a> </i> </span>
+{% endif %}
+{% endfor %}
 </div>
 <br>
+
 {% endfor %}
     
 

@@ -1,0 +1,26 @@
+<!-- This will display the user's blogs only
+
+
+We will also add a singleUser.html template that will be used to display only the blogs associated with a single given author. It will be used when we dynamically generate a page using a GET request with a user query parameter on the /blog route (similar to how we dynamically generated individual blog entry pages in the last assignment).
+
+-->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> {{user.name}}'s Blog posts: </h1>
+
+{% for blog in blogs %}
+<div class="grow">
+<a href="/blog?id={{blog.id}}">
+<span><b>{{blog.title}}</b></span>
+</a>
+<br>
+<span>{{blog.post}}</span>
+<br>
+</div>
+<br>
+{% endfor %}
+
+{% endblock %}
